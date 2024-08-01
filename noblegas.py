@@ -151,12 +151,7 @@ class NobleGasMix:
     @property
     def gas(self) -> List[namedtuple]:
         return self._gas_collection
-    
-            
-            
-            
-    
-    
+                    
     # Universal constants
     h = 6.626176e-34  # Planck constant [J*s]
     k_boltzman = 1.380662e-23  # Boltzman constant [J/K]
@@ -177,8 +172,12 @@ class NobleGasMix:
         # Check if gas is noble gas
         if gas_name not in ['He', 'Ne', 'Ar', 'Kr', 'Xe']:
             raise ValueError("Not a noble gas, Select from the list: He, Ne, Ar, Kr, Xe'")
-        
+         
         self._gas_collection.append(GasTuple(gas_name,Mol_fraction))
+        
+        # If more than 1 gas, calculate MW
+        if len(self._gas_collection) > 1:
+            self.mix_mw()
         
 
     # Function to set temperature    
@@ -197,5 +196,5 @@ class NobleGasMix:
         c2_mf = self._gas_collection[1][1]
         c2_mw = NobleGasData[str(self._gas_collection[1][0])]["Molecular Weight"]
         self._molecular_weight = (c1_mf*c1_mw + c2_mf*c2_mw)
-    
+        return print(f"The Molecular Weight of the mixture is: {self._molecular_weight} (g/mol)")
     
