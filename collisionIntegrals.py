@@ -77,7 +77,7 @@ c2 = input()
 print('Set the mole fraction of the mixture main component ' + c1 + ' (Value between 0 and 1)')
 print('Note: Mole fraction of the mixture main component is set as an arange list: c1_mf = np.arange(0, 1.0, 0.1)')
 #c1_mf = float(input())
-c1_mf = np.arange(0, 1.0, 0.1)  # np.arange(0, 1.05, 0.05)
+c1_mf = np.arange(0, 1.1, 0.1)  # np.arange(0, 1.05, 0.05)
 #c1_mf = np.arange(0.25,1.0,0.25)  # np.arange(0, 1.05, 0.05)
 c2_mf = 1 - c1_mf
 
