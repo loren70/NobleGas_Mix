@@ -143,7 +143,10 @@ print('Thermal diffusion factor of the mixture ' + str(ci.c1) + '-' +
 print(alpha_T)
 
 
-os.mkdir("./transportPropertiesCSV/")
+if not os.path.exists("./transportPropertiesCSV/"):
+      os.mkdir("./transportPropertiesCSV/")
+else:
+      pass
 
 
 viscosityMix = {'Mole fraction of component 1: ' + str(ci.c1):list(ci.c1_mf), str(ci.c1) + '-' + str(ci.c2) +
