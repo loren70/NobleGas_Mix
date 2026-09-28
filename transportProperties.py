@@ -153,17 +153,23 @@ viscosityMix = {'Mole fraction of component 1: ' + str(ci.c1):list(ci.c1_mf), st
       ' mixture at T=' + str(ci.T) + 'K':list(etha_mix)}
 df_viscosityMix=pd.DataFrame(viscosityMix, columns=['Mole fraction of component 1: ' + str(ci.c1), str(ci.c1) + '-' + str(ci.c2) +
       ' mixture at T=' + str(ci.T) + 'K'])
-df_viscosityMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'K-viscosityMix.csv', index=False)
+df_viscosityMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'mu-viscosityMix.csv', index=False)
+
+conductivityMix = {'Mole fraction of component 1: ' + str(ci.c1):list(ci.c1_mf), str(ci.c1) + '-' + str(ci.c2) +
+      ' mixture at T=' + str(ci.T) + 'K':list(lambda_mix)}
+df_conductivityMix=pd.DataFrame(conductivityMix, columns=['Mole fraction of component 1: ' + str(ci.c1), str(ci.c1) + '-' + str(ci.c2) +
+      ' mixture at T=' + str(ci.T) + 'K'])
+df_conductivityMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'K-conductivityMix.csv', index=False)
 
 diffusivityMix = {'Mole fraction of component 1: ' + str(ci.c1):list(ci.c1_mf), str(ci.c1) + '-' + str(ci.c2) +
-      ' mixture at T=' + str(ci.T) + 'K':list(etha_mix)}
+      ' mixture at T=' + str(ci.T) + 'K':list(D_mix)}
 df_diffusivityMix=pd.DataFrame(diffusivityMix, columns=['Mole fraction of component 1: ' + str(ci.c1), str(ci.c1) + '-' + str(ci.c2) +
       ' mixture at T=' + str(ci.T) + 'K'])
-df_diffusivityMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'K-diffusivityMix.csv', index=False)
+df_diffusivityMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'D12-diffusivityMix.csv', index=False)
 
 thermaldiffMix = {'Mole fraction of component 1: ' + str(ci.c1):list(ci.c1_mf), str(ci.c1) + '-' + str(ci.c2) +
-      ' mixture at T=' + str(ci.T) + 'K':list(etha_mix)}
+      ' mixture at T=' + str(ci.T) + 'K':list(alpha_T)}
 df_thermaldiffMix=pd.DataFrame(thermaldiffMix, columns=['Mole fraction of component 1: ' + str(ci.c1), str(ci.c1) + '-' + str(ci.c2) +
       ' mixture at T=' + str(ci.T) + 'K'])
-df_thermaldiffMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'K-thermaldiffMix.csv', index=False)
+df_thermaldiffMix.to_csv('transportPropertiesCSV/' + str(ci.c1) + '-' + str(ci.c2) + '-T=' + str(ci.T) + 'KT-thermaldiffMix.csv', index=False)
 # %%
